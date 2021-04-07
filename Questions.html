@@ -1,0 +1,1145 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="device-width, initial-scale=1">
+    <link rel="stylesheet" href="Questions.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="Stat.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;1,200&family=Playfair+Display:ital@1&family=Raleway&family=Reem+Kufi&display=swap" rel="stylesheet">
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/b29e93a16f.js" crossorigin="anonymous"></script>
+
+    <title>Sta 211 Quiz</title>
+  </head>
+  <body>
+ <style>
+   body {
+      margin:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://c1.wallpaperflare.com/preview/543/870/536/interior-office-workspace-workplace.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:cover;
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+ }
+    
+.sign-in{
+  background-color:rgba(255,255,255,0.2);
+  border-radius:10px;
+  align-self:center;
+  padding:20px;
+  margin:4% auto;
+  width:95%;
+  display:block;
+}
+
+.heading {
+  font-size:1.8em;
+  text-align:center;
+  color:#fff;
+  padding:15px;
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.header {
+  color:#000;
+  background-color:#dab817;
+  padding:0 5px 0 5px;
+  border-radius:5px;
+}
+
+.header-text {
+  color:#fff;
+  font-size:0.8em;
+  font-family:"Playfair Display", sans-serif;
+  text-align:center;
+  margin:0 0.5em 0.2em 0.5em;
+}
+
+.input-label {
+  color:white;
+  font-size:1.2em;
+  color:rgba(255,255,255,0.6);
+  font-family:"Lato", sans-serif;
+  padding:0;
+  display:block;
+}
+
+.reg {
+  color:#fff;
+  background:transparent;
+  width:100%;
+  margin:2% 0;
+  outline:none;
+  border:none;
+  border-bottom:1px solid #ddd;
+  font-family: "Montserrat", sans-serif;
+}
+
+.reg:focus {
+
+  border-bottom:2px solid #dab817;
+  
+}
+
+::placeholder {
+  color:rgba(255,255,255,0.4);
+}
+
+button {
+  outline:none;
+  border:none;
+}
+
+.start-button {
+  border:1px solid #dab817;
+  padding:10px;
+  height:3.5em;
+  color:#fff;
+  transition:color 300ms ease-in-out;
+  display:block;
+  width:60%;
+  overflow:hidden;
+  background:rgba(255,255,255,0);
+  z-index:1;
+  position:relative;
+  letter-spacing:2px;
+  font-family:"Lato", sans-serif;
+  text-transform:uppercase;
+  margin:5% auto;
+  font-weight:bold;
+  bottom:-1.3em;
+  user-select: none;
+}
+
+.start-button::before {
+  content:'';
+  position:absolute ;
+ top:0;
+ right:0;
+ bottom:0;
+ left:0;
+ z-index:-1;
+  background-color: #dab817;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 300ms ease-in-out;
+}
+
+.start-button:hover::before,
+.start-button:focus::before {
+  transform: scaleX(1.5);
+  
+}
+
+.start-button:hover,
+.start-button:focus {
+  color:#000;
+  outline:none;
+  border:1px solid transparent;
+}
+
+@media only screen and (min-width:600px) {
+  .start-button {
+   float:right;
+   word-spacing:5px;
+   font-size:1.4em;
+   }
+  
+  .login {
+    display:block;
+    padding:auto;
+    margin:auto;
+  }
+  
+  
+  .form {
+    display:block;
+    padding:auto;
+    margin:auto;
+  }
+  
+  .sign-in {
+    height:90%;
+    width:80%;
+  }
+  
+  .header-text {
+    font-size:1.3em;
+  }
+  
+  .heading {
+    font-size:2.5em;
+  }
+  
+  .input-label {
+    font-size:1.3em;
+  }
+  
+ .reg {
+   font-size:1em;
+   margin:5% 0;
+  border-bottom:2px solid #fff;
+  width:80%;
+  }
+ 
+ .reg:focus {
+
+  border-bottom:3px solid #dab817;
+  
+  }
+}
+
+.bg {
+  height:100vh;
+  width:100vw;
+  position: relative;
+}
+
+.question-body {
+  display:none;
+}
+
+.each-q {
+  background-color: rgba(255,255,255,0.2);
+  height: 60%;
+  border-radius:10px;
+  margin:4% auto;
+  padding:20px;
+  width:95%;
+}
+
+.quiz-questions {
+  color:white;
+  font-size:1.1em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.quiz-options {
+  display:block;
+  color:white;
+  font-size:1.1em;
+  font-family: "Montserrat", sans-serif;
+  margin-top:3%;
+  position:relative;
+  margin-left:2em;
+}
+
+.each-q input{
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.each-q .check {
+  position:absolute;
+  left:-2em;
+  height: 1.4em;
+  width: 1.4em;
+  border: 2px solid #fff;
+  padding:0.2em;
+  background-color:transparent;
+  border-radius:50%;
+}
+
+.each-q :hover input ~ check {
+ background-color: rgba(255,255,255,0.6);
+}
+
+.checked {
+  color:#dab817;
+}
+
+.each-q .check:after {
+  content: "";
+  margin:auto;
+  display: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #dab817;
+}
+
+.each-q input:checked ~ .check::after {
+  display: block;
+  margin:auto;
+}
+
+.heading {
+  font-size:1.8em;
+  text-align:center;
+  color:#fff;
+  padding:15px;
+  margin-top:2%;
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.header {
+  color:#000;
+  background-color:#dab817;
+  padding:0 5px 0 5px;
+  border-radius:5px;
+}
+
+.time {
+  text-align:right;
+  font-size:1.2em;
+  font-family: "Reem Kufi", sans-serif;
+  color: white;
+  padding:0 3%;
+  position: fixed;
+  right:0;
+  top:0.2em;
+}
+
+.submit-button {
+  border:1px solid #dab817;
+  padding:5px;
+  height:3.5em;
+  color:#fff;
+  transition:color 300ms ease-in-out;
+  display:block;
+  width:50%;
+  overflow:hidden;
+  background:rgba(255,255,255,0);
+  z-index:1;
+  position:relative;
+  letter-spacing:2px;
+  font-family:"Lato", sans-serif;
+  text-transform:uppercase;
+  margin:5% 3%;
+  bottom:0;
+  font-weight:bold;
+  float:right;
+  user-select: none;
+}
+
+.submit-button::before {
+  content:'';
+  position:absolute ;
+ top:0;
+ right:0;
+ bottom:0;
+ left:0;
+ z-index:-1;
+  background-color: #dab817;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 300ms ease-in-out;
+}
+
+.submit-button:hover::before,
+.submit-button:focus::before {
+  transform: scaleX(1.5);
+  
+}
+
+.submit-button:hover,
+.submit-button:focus {
+  color:#000;
+  outline:none;
+  border:1px solid transparent;
+}
+
+.spinning {
+  font-size:1.4em;
+  transform-origin:center;
+  animation: spin 1.3s linear infinite;
+  display:none;
+}
+
+@keyframes spin {
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+.pop-up {
+  position: fixed;
+  margin:auto;
+  top:20%;
+  left:8%;
+  width:85%;
+  background-color: #000;
+  border-radius:15px;
+  opacity:0;
+  display:none;
+}
+
+.pop-up-heading {
+   display:block;
+   text-align:center;
+   font-family: "Reem Kufi", sans-serif;
+   color:#fff;
+   border-bottom:1px solid #fff;
+   padding:2% 0;
+   user-select:none;
+   font-size:1.4em;
+}
+
+.warning {
+  color:#dab817;
+}
+
+.pop-up-body {
+  color:#fff;
+  display:block;
+  padding:22%;
+  font-size:13pt;
+  text-align: center;
+ font-family: "Montserrat", sans-serif;
+  border-bottom:1px solid #fff;
+  user-select:none;
+}
+
+.yes {
+  border:1px solid #dab817;
+  padding:auto;
+  height:2.5em;
+  color:#fff;
+  width:25%;
+  display:inline-block;
+  transition:color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
+  overflow:hidden;
+  background:rgba(255,255,255,0);
+  z-index:1;
+  position:relative;
+  letter-spacing:2px;
+  font-family:"Lato", sans-serif;
+  text-transform:uppercase;
+  margin:5% 3%;
+  bottom:0;
+  float:right;
+  font-weight:bold;
+  user-select: none;
+}
+/*
+.yes::before {
+  content:'';
+  position:absolute ;
+ top:0;
+ right:0;
+ bottom:0;
+ left:0;
+ z-index:-1;
+  
+  
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 300ms ease-in-out;
+}
+
+.yes:hover::before,
+.yes:focus::before {
+  transform: scaleX(1.5);
+  
+}
+*/
+.yes:hover,
+.yes:focus {
+  color:#000;
+  outline:none;
+  background-color: #dab817;
+  border:1px solid transparent;
+}
+
+.no {
+  border:1px solid #dab817;
+  padding:auto;
+  height:2.5em;
+  color:#fff;
+  width:20%;
+  transition:color 300ms ease-in-out;
+  transition:background-color 300ms ease-in-out;
+  overflow:hidden;
+  display:inline-block;
+  background:rgba(255,255,255,0);
+  z-index:1;
+  position:relative;
+  letter-spacing:2px;
+  font-family:"Lato", sans-serif;
+  text-transform:uppercase;
+  margin:5% 3%;
+  font-weight:bold;
+  bottom:0;
+  float:right;
+  user-select: none;
+}
+/*
+.no::before {
+  content:'';
+  position:absolute ;
+ top:0;
+ right:0;
+ bottom:0;
+ left:0;
+ z-index:-1;
+  background-color: #dab817;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 300ms ease-in-out;
+}
+
+.no:hover::before,
+.no:focus::before {
+  transform: scaleX(1.5);
+  
+}*/
+
+.no:hover,
+.no:focus {
+  color:#000;
+  outline:none;
+  background-color: #dab817;
+  border:1px solid transparent;
+}
+
+.fade-in {
+  top: 20%;
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    top: 10%;
+    opacity:0
+  }
+  to {
+    top: 20%;
+    opacity:1;
+  }
+}
+
+.fade-out {
+  top: 20%;
+  animation: fadeOut 0.3s ease-in forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    top: 20%;
+    opacity:1;
+  }
+  to {
+    top: 10%;
+    opacity:0;
+  }
+}
+
+.result {
+  display:none;
+  background-color:rgba(255,255,255,0.2);
+  border-radius:10px;
+  align-self:center;
+  padding:20px;
+  margin:4% auto 50% auto;
+  width:95%;
+}
+
+.result-text {
+  color:white;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.score {
+  text-align:center;
+  font-size:1.7em;
+  display:block;
+  padding: auto;
+}
+
+.result-name {
+  font-weight:bolder;
+}
+
+.answers {
+  display:none;
+  /*display:block;*/
+/*  background-color:rgba(255,255,255,0.2);*/
+  border-radius:10px;
+  align-self:center;
+  padding:20px;
+  margin:4% auto;
+  width:95%;
+  color:white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.back {
+  font-size:1.1em;
+  font-style:italic;
+  text-align:left;
+  display:block;
+}
+
+.ans {
+    font-family:"Playfair Display", sans-serif;
+}
+
+.answers-button {
+  position:relative;
+  border:1px solid #dab817;
+  padding:10px;
+  height:3.5em;
+  color:#fff;
+  transition:color 300ms ease-in-out;
+  display:block;
+  width:60%;
+  overflow:hidden;
+  background:rgba(255,255,255,0);
+  z-index:1;
+  position:relative;
+  letter-spacing:2px;
+  font-family:"Lato", sans-serif;
+  text-transform:uppercase;
+  margin:5% auto;
+  font-weight:bold;
+  bottom:-1.3em;
+  user-select: none;
+}
+
+.answers-button::before {
+  content:'';
+  position:absolute ;
+ top:0;
+ right:0;
+ bottom:0;
+ left:0;
+ z-index:-1;
+  background-color: #dab817;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 300ms ease-in-out;
+}
+
+.answers-button:hover::before,
+.answers-button:focus::before {
+  transform: scaleX(1.5);
+  
+}
+
+.answers-button:hover,
+.answers-button:focus {
+  color:#000;
+  outline:none;
+  border:1px solid transparent;
+}
+
+.each-a {
+  background-color: rgba(255,255,255,0.2);
+  
+  border-radius:10px;
+  margin:4% auto;
+  padding:6%;
+  width:95%;
+}
+
+.quiz-answers {
+   color:white;
+  font-size:1.1em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.right {
+  position:relative;
+  float:right;
+  clear:right;
+}
+
+.right::before{
+  content:'';
+  position:absolute;
+  width: 8px;
+  height: 22px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0; 
+  transform: rotate(45deg);
+/*  left:15em;*/
+  top:-1em;
+}
+
+.wrong {
+  padding-right:5px;
+  position:relative;
+  float:right;
+  clear:right;
+}
+
+.wrong::before {
+  content:'';
+  position:absolute;
+  height:2px;
+  width:22px;
+  border-radius:10px 10px 10px 10px;
+  transform:rotate(45deg);
+  background-color: #dab817;
+ /* left:15em;*/
+}
+
+.wrong::after {
+  content:'';
+  position:absolute;
+  height:2px;
+  width:22px;
+  border-radius:10px 10px 10px 10px;
+  background-color: #dab817;
+  transform:rotate(-45deg);
+ /* left:15em;*/
+}
+
+.author-answer {
+  text-align:center;
+  font-size:0.9em;
+  padding:2%;
+  font-family: "Montserrat", sans-serif;
+  color:#fff;
+  bottom:0;
+  display:none;
+}
+
+.author-link {
+  color:#fff;
+  text-decoration: underline;
+}
+
+.author-link:hover {
+  text-decoration: underline;
+  color:#dab817;
+}
+
+.author-result {
+  text-align:center;
+  font-size:0.9em;
+  padding:2%;
+  font-family: "Montserrat", sans-serif;
+  color:#fff;
+  bottom:0;
+  display:none;
+}
+
+@media only screen and (min-width:600px) {
+  
+  .each-q{
+    height:60%;
+    display:block;
+    margin:4% auto;
+    padding:auto 100%;
+    width:80%;
+  }
+  
+  .each-a{
+    display:block;
+    margin:4% auto;
+    padding:4%;
+    width:80%;
+    font-size:2em;
+  }
+  
+   .submit-button {
+   float:right;
+   word-spacing:5px;
+   font-size:1.4em;
+   }
+   
+  
+   .answers-button {
+   float:right;
+   word-spacing:5px;
+   font-size:1.4em;
+   top:5%;
+   }
+   
+  
+  .heading {
+    font-size:2.5em;
+  }
+  
+  .time {
+    font-size: 1.7em;
+  }
+  
+  .pop-up-heading {
+    font-size:2.3em;
+  }
+  
+  .pop-up-body {
+    font-size: 18pt;
+    padding:30%;
+  }
+  
+  .result {
+  text-align:center;
+  font-size:1.8em;
+  padding: auto;
+  }
+  
+  .right {
+    padding-top:1.2em;
+    padding-right:0.6em;
+  }
+  
+  .wrong {
+    padding-top:0.2em;
+    padding-right:0.2em;
+  }
+  
+  .right::before {
+    border-width:0 3px 3px 0;
+    width:10px;
+    height:24px;
+  }
+  
+  .wrong::before {
+    height:3px;
+    width:25px;
+  }
+  
+  .wrong::after {
+    height:3px;
+    width:25px;
+  }
+  
+  .back {
+    font-size:1.3em;
+  }
+  
+  .author-result {
+  font-size:1.8em;
+  position:absolute;
+  bottom:0;
+  left:40%;
+  }
+  
+  .author-answer {
+    font-size:1.8em;
+  }
+}
+ </style>
+    <h4 class="heading">STA <span class="header">211</span> Quiz</h4>
+    
+    <h6 class=header-text>This is a preparatory quiz for the upcoming STA 211 exam. Students should endeavor to score at least 70%. Time allocated for this quiz is 10 mins. </h6>
+      <div class="sign-in">
+        <form name="statForm" autocomplete="off" class="">
+          <div class="form">
+          <label for="" class ="input-label">Name
+        <input type="text" name="name" id="name" class="reg" placeholder="Full Name"></label>
+        <label for="" class="input-label">Reg No
+        <input type="number" name="regNo" id="regNo" class="reg" placeholder="Registration No"></label>
+        <label for="" class="input-label">School
+        <input type="text" name="school" id="school" class="reg caps" placeholder="e.g SEET"></label>
+        <label for="" class="input-label">Department
+        <input type="text" name="dept" id="dept" class="reg caps" placeholder="e.g MEE">
+        </label>
+        </div>
+      </form>
+      
+    <button id="start" class="start-button"> Start Quiz</button>
+    
+        </div>
+     
+     
+    <div class="bg">
+     <div class="question-body">
+    <div class="time"></div>
+  <div class="questions">
+    <div class="question-wrapper">
+      
+    </div>
+    
+        </div>
+     </div>
+
+    <div class="result"> </div>
+    
+    <div class="answers">
+
+    </div>
+   <span class="author author-answer"><a href="https://www.facebook.com/chidera.ezenwata" class="author-link" target="_self">Coded Writer</a> &copy;2021</span>
+   <span class="author author-result"><a href="https://www.facebook.com/chidera.ezenwata" class="author-link" target="_self">Coded Writer</a> &copy;2021</span>
+  </div>
+           
+
+   <div class="pop-up">
+      <h3 class="pop-up-heading">Warning <i class="fas fa-exclamation-circle warning"></i></h3>
+          <span class="pop-up-body">Are you sure you want to submit?</span>
+          <button class="yes">Yes</button><button class="no">No</button>
+     
+        </div>
+
+    <script src="Questions.js" type="text/javascript" charset="utf-8">
+      function init() {
+
+var startButton, details, select, selectAll, author, t, name, regNo, school, dept, submitButton, elapsedTime, questions, qAnswers, answer, answers, userSelect, userSelected, unchecked,  answerSection, correctAns, answersButton, answerCon, backButton, tick;
+  select = document.querySelector.bind(document);
+  selectAll = document.querySelectorAll.bind(document);
+  
+  /*author = document.createElement("span");
+  author.innerHTML = "&copy;<a href='#'>Coded Writer</a>2021";
+  author.setAttribute("class", "author");*/
+  
+name = select("#name");
+regNo = select("#regNo");
+school = select("#school");
+dept = select("#dept");
+
+details = selectAll(".reg");
+startButton = select("#start");
+ startButton.addEventListener("click", ()=>{
+  details.forEach((inp)=>{
+      if(inp.value.trim =="" || !(inp.value)) {
+      inp.style["border-bottom-color"] = "#aa311b";
+    } else if(name.value =="" || name.value == " ") {
+      name.style["border-bottom-color"] = "#aa311b";
+    } else if(regNo.value =="" || regNo.value == " ") {
+      regNo.style["border-bottom-color"] = "#aa311b";
+    } else if(school.value =="" || school.value == " ") {
+      school.style["border-bottom-color"] = "#aa311b";
+    } else if(dept.value =="" || dept.value == " ") {
+      dept.style["border-bottom-color"] = "#aa311b";
+    } else {
+      setTimeout(()=>{
+        select(".sign-in").style.display = "none";
+       select(".question-body").style.display = "block";
+       select(".header-text").style.display = "none";
+     
+    elapsedTime = new Date().getTime() + 600000;
+      }, 1700);
+   startButton.innerHTML = "<span><i class='spinning fas fa-spinner'></i></span>  Start Quiz";
+     }
+   });
+  });
+      name.onfocus = ()=>{
+        name.style["border-bottom-color"] = "#dab817";
+      };
+      name.onblur = ()=>{
+        name.style["border-bottom-color"] = "#fff";
+      };
+      regNo.onfocus = ()=>{
+        regNo.style["border-bottom-color"] = "#dab817";
+      };
+      regNo.onblur = ()=>{
+        regNo.style["border-bottom-color"] = "#fff";
+      };
+      school.onfocus = ()=>{
+        school.style["border-bottom-color"] = "#dab817";
+      };
+      school.onblur = ()=>{
+        school.style["border-bottom-color"] = "#fff";
+        school.value = school.value.toUpperCase();
+      };
+      dept.onfocus = ()=>{
+        dept.style["border-bottom-color"] = "#dab817";
+      };
+      dept.onblur = ()=>{
+        dept.style["border-bottom-color"] = "#fff";
+        dept.value = dept.value.toUpperCase();
+      };
+      
+ 
+   
+       
+  questions = [{ques:"When an investigator uses data which have already been collected by others, such data is called?", options:["Primary data", "Secondary data", "Tertiary data", "Borrowed data"], ans:"Secondary data"}, {ques:"What technique is used to ensure that a sample is a representative of a population?", options:["Framing", "Targeting", "Randomization", "Sampling"], ans:"Randomization"}, {ques:"Which one of the following is not an example of Ordinal data?", options:["Rank", "Volume", "Statistics grade", "Satisfaction level"], ans:"Volume"}, {ques: "A subgroup that is  a representative of a population is called?", options:["A category", "Data", "A sample", "Census"], ans: "A sample"}, {ques: "Two types of statistical variables are?", options:["Categorical and Descriptive", "Categorical and Numerical", "Descriptive and Numerical", "Constant and Numerical"], ans:"Categorical and Numerical"}, {ques: "What name is given to data which can be ranked?", options:["Categorical data", "Ordinal data", "Interval data", "Ratio data"], ans:"Ordinal data"}, {ques: "What name is given to data which is on a continuous scale with a neutral zero?", options:["Interval data", "Ranked data", "Ratio data", "Ordinal data"], ans:"Ratio data"}, {ques: "What is the first stage in statistics?", options:["Analyze data", "Collect data", "Organize data", "Identify the group of people to be studied"], ans:"Identify the group of people to be studied"}, {ques: "Which of these is an example of a categorical variable?", options:["Flavor of soft drink ordered by each customer at a fast food restaurant", "Height, measured in inches, for each student in a class", "Points scored by each player on a team", "Color of a car"], ans:"Height, measured in inches, for each student in a class"}, {ques: "Numerical and pictorial information about variables are called?", options: ["Analytical Statistics", "Descriptive Statistics", "Inferential Statistics", "Parametric Statistics"], ans:"Descriptive Statistics"}, {ques: "The entire group of interest for a statistical conclusion is called?", options:["The data","The population", "The sample", "The Statistic"], ans:"The population"}, {ques: "Statistical Inference is?", options:["the process of estimates and conclusions carefully based on data from a sample", "the process of estimates and conclusions carefully based on data from an entire population", "a pictorial display that summarizes data", "a tabluation of data"], ans:"the process of estimates and conclusions carefully based on data from a sample"}, {ques:"Variables whose measurement is done in terms such as weight, height and length are classified as?", options: ["Continuous Variables", "Measuring Variables", "Flowchart Variables", "Discrete Variables"], ans:"Continuous Variables"}, {ques: "Focus groups, individual respondents and panels of respondents are classified as?", options: ["Pointed data sources", "Itemized data sources", "Secondary data sources", "Primary data sources"], ans:"Primary data sources"}, {ques: "Analysis of labor turnover rates, performance appraisal, training programs and planning of incentives are examples of role of?", options: ["Statistics in personnel management", "Statistics in finance", "Statistics in marketing", "Statistics in production"], ans:"Statistics in personnel management"}, {ques: "Data on gender is categorized as?", options: ["Ratio data", "Ordinal data", "Nominal data", "Interval data"], ans:"Nominal data"}, {ques: "All but one is a method of sampling", options: ["Random Sampling", "Cluster Sampling", "Stratified Sampling", "Hierarchical Sampling"], ans:"Hierarchical Sampling"}, {ques:"Which one of the following is a statistic?", options:["Sample mean", "Population variance", "Population mean" , "None of the above"], ans:"Sample mean"}, {ques: "Which of the following points do not reflect statistics?", options:["It is a while subject of study", "They can be inferential", "It describes methods of collecting quantitative data", "It describes ways of analyzing qualitative data"], ans:"It is a while subject of study"}, {ques: "Sample statistics are denoted by?", options: ["Upper case Greek letter", "Associated Roman alphabets", "Roman letters", "Lower case Greek letter"], ans:"Roman letters"}];
+  
+  let questionCon = select(".question-wrapper");
+  for(a=0; a< questions.length; a++) {
+  let b = a + 1;
+   
+   let eachCon = document.createElement("div");
+    
+  eachCon.setAttribute("class", "each-q");
+  
+ var questionSection = "<span id='questions"+a+"' class='quiz-questions'>"+ b+". "+  questions[a].ques +"</span><br><br>";
+  for(c =0; c < questions[a].options.length; c++) {
+
+    questionSection += "<span class='quiz-options'><label><input type='radio' name="+'opt'+a+" class='radio' value='"+questions[a].options[c]+"'/>"+questions[a].options[c] + "<span class='check'></span></label></span>";
+  }
+   
+    eachCon.innerHTML += questionSection;
+    questionCon.appendChild(eachCon);
+    
+  }
+  submitButton = document.createElement("button");
+  submitButton.innerHTML = "Submit";
+  submitButton.setAttribute("class", "submit-button");
+  questionCon.appendChild(submitButton);
+  
+
+   function submit() {
+   // select(".pop-up").classList.add("fade-in");
+    //select(".pop-up").classList.remove("fade-out");
+    popUp();
+     select(".pop-up").style.opacity = "1";
+     select(".bg").style.opacity = "0.4";
+     select(".bg").style.brightness = "75%";
+     select(".pop-up").style.display= "block";
+     submitButton.removeEventListener("click", submit);
+     select(".yes").addEventListener("click", yes);
+     select(".no").addEventListener("click", no);
+   }
+   
+   const popUp = ()=>{
+    select(".pop-up").classList.toggle("fade-in");
+  };
+   
+   function yes() {
+  // select(".pop-up").classList.toggle("fade-in");
+  //   select(".pop-up").classList.add("fade-out");
+     select(".pop-up").style.display = "none";
+     select(".bg").style.opacity = "1";
+     select(".bg").style.brightness = "100%";
+     submitButton.addEventListener("click", submit);
+     score();
+   }
+   
+   function no() {
+     popUp();
+      //  select(".pop-up").classList.toggle("fade-in");
+   //  select(".pop-up").classList.add("fade-out");
+    select(".pop-up").style.display= "none";
+     select(".bg").style.opacity = "1";
+     select(".bg").style.brightness = "100%";
+     submitButton.addEventListener("click", submit);
+   }
+   
+select(".yes").removeEventListener("click", yes);
+select(".no").removeEventListener("click", no);
+submitButton.addEventListener("click", submit);
+  
+  function score() {
+    var scores = 0;
+    let quizEnd = select(".result");
+    select(".question-body").style.display = "none";
+    select(".header-text").style.display = "none";
+    quizEnd.style.display = "block";
+   select(".author-result").style.display = "block";
+   select(".author-answer").style.display = "non";
+    clearInterval(t);
+   for(i=0; i< questions.length; i++) {
+     userSelect = document.getElementsByName("opt"+i);
+  
+for(j=0; j< userSelect.length; j++){
+    if (userSelect[j].checked) 
+        answer = userSelect[j].value;
+        
+   }
+     correctAns = questions[i].ans;
+        if (answer == correctAns){
+           scores ++;
+        }
+   
+   }
+   
+   var percentScore = Math.floor((scores / questions.length)* 100);
+   
+   quizEnd.innerHTML = "<span class='result-text'>Congratulations <span class='result-name'>"+ name.value+ "</span> you got "+scores+ " out of "+questions.length+" questions</span><br><br><span class='result-text score'>Your score: <br><br>"+percentScore+"%</span><br><br>";
+   
+ 
+  quizEnd.appendChild(answersButton);
+  
+} 
+
+answersButton = document.createElement("button");
+  answersButton.innerHTML = "View Answers";
+  answersButton.setAttribute("class", "answers-button");
+  
+  
+backButton = document.createElement("span");
+  backButton.innerHTML = "<i class='fas fa-angle-double-left'></i> Back";
+  backButton.setAttribute("class", "back");
+ 
+tick = document.createElement("span");
+  tick.setAttribute("class", "tick");
+  
+  
+   function checkAnswers() {
+     select(".result").style.display = "none";
+     select(".header-text").style.display = "none";
+     select(".answers").style.display = "block"
+   select(".author-result").style.display = "none";
+   select(".author-answer").style.display = "block";
+
+   qAnswers = select(".answers");
+  qAnswers.appendChild(backButton);
+  for(x=0; x < questions.length; x++) {
+     let z = x + 1;
+      answerCon = document.createElement("div");
+       answerCon.setAttribute("class", "each-a");
+  
+  
+ var answerSection = " <span id='answers"+x+"' class='quiz-answers'>"+ z+". "+  questions[x].ques +"</span><br><br>";
+   userSelected = document.getElementsByName("opt"+x);
+  
+  for(y =0; y < userSelected.length; y++) {
+     if (userSelected[y].checked) {
+        answers = userSelected[y].value;
+     }
+   
+  }
+     
+    answerSection += "<span class='answer-value'><span class='ans'>Ans:</span> "+questions[x].ans+"  "+"<br><span class='ans val'>You chose</span>: "+answers+" </span></span>";
+    
+ if(questions[x].ans == answers) {
+      tick.classList.remove("wrong");
+      tick.classList.add("right");
+     
+  } else {
+   tick.classList.remove("right");
+   tick.classList.add("wrong");
+    }
+   answerCon.appendChild(tick);
+   
+  
+    answerCon.innerHTML += answerSection;
+    qAnswers.appendChild(answerCon);
+   }
+ }
+ 
+
+  function goBack() {
+   select(".result").style.display = "block";
+   select(".answers").style.display = "none";
+   select(".answers").innerHTML = "";
+ /*for(n =0; n < userSelected.length; n++) {
+       if (userSelected[n].checked) 
+        answers = userSelected[n].value;
+  } */
+   }
+/*
+window.addEventListener("click", checkAnswers);*/
+answersButton.addEventListener("click", checkAnswers);
+backButton.addEventListener("click", goBack);
+
+  function timer() {
+
+  let currentTime = new Date().getTime();
+   let now = elapsedTime - currentTime;
+    function addZero(zero) {
+      return (zero < 10)? "0"+String(zero):String(zero);
+    }
+    
+     let hours = addZero(Math.floor((now % 86400000 ) / 3600000));
+		let minutes = Math.floor( (now % 3600000 ) / 60000);
+		let seconds = Math.floor((now % 60000)/ 1000);
+    
+      if(now < 0)
+         score();
+    
+   select(".time").innerHTML = "Time left: "+ addZero(minutes) + ":" + addZero(seconds);
+     }
+   t = setInterval(timer,1000);
+}
+
+window.addEventListener("DOMContentLoaded", init);
+    </script>
+  </body>
+</html>
